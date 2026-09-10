@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume — Yazid Bokhari</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ink: #1a1a18;
+      --muted: #6b6b60;
+      --rule: #c8c4b4;
+      --bg: #f5f2ea;
+      --accent: #2c4a6e;
+      --paper: #fdfbf7;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      color: var(--ink);
+      min-height: 100vh;
+      padding: 3rem 1rem;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--paper);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.10);
+      padding: 4rem 5rem;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HEADER ── */
+    header {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    /* ── PHOTO ── */
+    .photo-wrapper {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      flex-shrink: 0;
+    }
+
+    .photo-wrapper img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px dashed var(--rule);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: var(--bg);
+      transition: border-color 0.2s, background 0.2s;
+      gap: 0.3rem;
+    }
+    .photo-placeholder:hover {
+      border-color: var(--accent);
+      background: #eef1f6;
+    }
+    .photo-placeholder svg { opacity: 0.45; }
+    .photo-placeholder span {
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .photo-edit-btn {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--paper);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+    .photo-edit-btn:hover { opacity: 0.8; }
+    .photo-edit-btn svg { display: block; }
+
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--accent);
+      margin-top: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      text-align: right;
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .contact a { color: var(--accent); text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    /* ── SECTIONS ── */
+    section { margin-bottom: 2.6rem; }
+
+    .section-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── ENTRY ── */
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0 1.5rem;
+      margin-bottom: 1.6rem;
+    }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .entry-sub {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 400;
+      margin-top: 0.15rem;
+      letter-spacing: 0.02em;
+    }
+
+    .entry-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 0.25rem;
+      letter-spacing: 0.05em;
+      text-align: right;
+    }
+
+    .entry-body {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+    }
+
+    .entry-body p,
+    .entry-body li {
+      font-size: 0.875rem;
+      line-height: 1.75;
+      color: #3a3a35;
+    }
+
+    .entry-body ul {
+      list-style: none;
+      padding: 0;
+    }
+    .entry-body ul li::before {
+      content: '—';
+      color: var(--rule);
+      margin-right: 0.6rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem 1rem;
+    }
+    .skill-tag {
+      font-size: 0.8rem;
+      color: #3a3a35;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--rule);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .cert {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.875rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 0.6rem;
+    }
+    .cert:last-child { border-bottom: none; }
+    .cert-name { color: var(--ink); font-weight: 400; }
+    .cert-issuer { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.04em; }
+    .cert-year { color: var(--muted); font-size: 0.78rem; white-space: nowrap; margin-left: 1rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .page { padding: 2.5rem 1.8rem; }
+      header { grid-template-columns: 1fr; }
+      .photo-wrapper { margin: 0 auto; }
+      .contact { text-align: left; }
+      .entry { grid-template-columns: 1fr; }
+      .entry-date { text-align: left; }
+    }
+    .projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-card {
+  margin-bottom: 0.5rem;
+}
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .project-name {
+     flex: 0 0 auto;
+    font-weight: 700;
+    }
+
+    .project-desc {
+    flex: 1;
+    padding-left: 1rem;
+    border-left: 1px solid #ccc;
+  }
+  .project-steps {
+  padding-left: 1rem;
+  font-size: 0.9em;
+  line-height: 1.2;
+  margin-top: 0.3rem;
+}
+
+.project-steps li {
+  margin-bottom: 0.3rem;
+}
+  </style>
+</head>
+<body>
+<main class="page">
+
+  <!-- HEADER / CONTACT -->
+<header>
+  <!-- PHOTO -->
+  <div class="photo-wrapper" id="photoWrapper">
+    <img src="./ybokhari.JPG" alt="Yazid Bokhari">
+  </div>
+
+  <div>
+    <div class="name">Yazid Bokhari</div>
+    <div class="title">C / C++ Systems Developer</div>
+    <p>Computer Science student at 42 Lyon, seeking a 6-month internship or fixed-term contract in systems programming</p>
+  </div>
+
+  <address class="contact" style="font-style:normal;">
+    <a href="mailto:yazid.bokhari@hotmail.com">yazid.bokhari@hotmail.com</a><br>
+    +33 6 98 64 80 14<br>
+    Lyon, France<br>
+    <a href="https://github.com/SiliconMoloch">github.com/SiliconMoloch</a>
+  </address>
+</header>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-label">Education</div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">RNCP39774 - IT Architecture Expert</div>
+        <div class="entry-sub">42 Lyon Auvergne-Rhône-Alpes</div>
+      </div>
+      <div class="entry-date">November 2024 - Present</div>
+      <div class="entry-body">
+        <p>Pursuing the RNCP39774 certification in IT Architecture delivered by 42.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Bachelor of Laws</div>
+        <div class="entry-sub">Université catholique de Lyon</div>
+      </div>
+      <div class="entry-date">2023</div>
+      <div class="entry-body">
+        <p>Two years of study in general law then one year in private law.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
+    <div class="section-label">Technical Skills</div>
+    <div class="skills-grid">
+      <div class="skill-tag"><strong>C & Unix Systems</strong><br>Pointers, memory management, data structures, standard library, syscalls, processes, pipes, signals</div>
+      <div class="skill-tag"><strong>C++</strong><br>Object-oriented programming, inheritance, STL, templates, exception handling.</div>
+      <div class="skill-tag"><strong>Parallel programming</strong><br>Multithreading, multiprocessing, synchronisation.</div>
+      <div class="skill-tag"><strong>Tools</strong><br>Vim, Git, Shell, Makefile, Docker, GDB, Valgrind</div>      
+    </div>
+  </section>
+<!-- KEY PROJECTS -->
+<section>
+  <div class="section-label">Key Projects</div>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>FdF</strong></div>
+        <div class="project-desc">Wireframe rendering in C, using the MiniLibX library.</div>
+      </div>
+      <div class="project-steps">
+          <li>MinilibX setup</li>
+          <li>Isometric projection, Bresenham algorithm, pixel rendering</li>
+          <li>Other projections, model translations, rotations, colors...</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>Philosophers</strong></div>
+        <div class="project-desc">Solution to the dining philosophers problem in C</div>
+      </div>
+      <div class="project-steps">
+        <li>Multithreading: pthread library, mutexes</li>
+        <li>Multiprocessing: fork, semaphores</li>
+        <li>Helgrind / AddressSanitizer for race condition detection</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>minishell</strong></div>
+        <div class="project-desc">Basic shell in C</div>
+      </div>
+      <div class="project-steps">
+        <li>Using readline for command-line prompting</li>
+        <li>Abstract syntax tree for command parsing</li>
+        <li>Redirection and logic operators for execution of commands</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>miniRT</strong></div>
+        <div class="project-desc">Ray-tracing engine in C</div>
+      </div>
+      <div class="project-steps">
+        <li>Phong shading (diffuse, specular and ambient)</li>
+        <li>Different objects: sphere, plane, cylinder, cone</li>
+        <li>Multithreading</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>webserv</strong></div>
+        <div class="project-desc">HTTP server in C++</div>
+      </div>
+      <div class="project-steps">
+        <li>Configuration parsing inspired by Nginx</li>
+        <li>GET, POST and DELETE requests</li>
+        <li>CGI execution for dynamic content</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>Retro-MFA</strong></div>
+        <div class="project-desc">Reverse-engineering of encrypted files</div>
+      </div>
+      <div class="project-steps">
+        <li>Analyzing and reverse-engineering the encryption process</li>
+        <li>Extracting images from encrypted files</li>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-head">
+        <div class="project-name"><strong>ft_transcendence</strong></div>
+        <div class="project-desc">Web educational platform</div>
+      </div>
+      <div class="project-steps">
+        <li>Implementing user authentication and authorization</li>
+        <li>Creating an interface for uploading lessons and resources</li>
+        <li>Exams and gamification features for student engagement</li>
+        <li>AdonisJS backend, React frontend</li>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+
+  <!-- ASSOCIATIVE LIFE -->
+
+    <div class="section-label">Associative Life</div>
+    <div class="entry">
+      <div>
+        <div class="entry-title">Tutorship at 42</div>
+        <div class="entry-sub">School Association</div>
+      </div>
+      <div class="entry-date">Jan 2025 - Present</div>
+      <div class="entry-body">
+        <p>- Organizing coding workshops and mentoring students at 42.</p>
+        <p>- "Lifeguard" role during the 42 Piscine (intensive selection program): exam supervision and C project evaluation.</p>
+      </div>
+    </div>
+    <div class ="entry">
+        <div>
+        <div class="entry-title">Ambassadorship at 42</div>
+        <div class="entry-sub">School Association</div>
+      </div>
+      <div class="entry-date">Jan 2025 - Present</div>
+      <div class="entry-body">
+        <p>- Welcoming new students, holding information sessions and representing the school.</p>
+        <p>- Promoting the school to companies and potential partners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <div class="section-label">Certifications</div>
+    <div class="cert-list">
+      <div class="cert">
+        <div>
+          <div class="cert-name">GDPR MOOC</div>
+          <div class="cert-issuer">Opteven</div>
+        </div>
+        <div class="cert-year">January 2021</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+  <!-- WORK EXPERIENCE -->
+
+    <div class="section-label">Work Experience</div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">GDPR Compliance Intern</div>
+        <div class="entry-sub">Internship at Opteven</div>
+      </div>
+      <div class="entry-date">January 2021</div>
+      <div class="entry-body">
+        <p>Simplification and communication of GDPR principles to employees.</p>
+      </div>
+    </div>
+    <div class="entry">
+      <div>
+        <div class="entry-title">Private Banking Loan Officer</div>
+        <div class="entry-sub">Société Générale · Lyon, France</div>
+      </div>
+      <div class="entry-date">November 2023 — May 2024</div>
+      <div class="entry-body">
+        <ul>
+          <li>Managed mortgage loan applications and ensured compliance with regulatory requirements.</li>
+          <li>Processed CHF mortgage repayments and managed loans secured by Pillar 3a life insurance accounts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Secretary</div>
+        <div class="entry-sub">Grande Pharmacie d'Oullins - Oullins, France</div>
+      </div>
+      <div class="entry-date">December 2021 — March 2022</div>
+      <div class="entry-body">
+        <ul>
+          <li>Managed administrative tasks and maintained records for the pharmacy.</li>
+          <li>During the COVID-19 pandemic, ensured the continuity of vaccination services.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div>
+        <div class="entry-title">Various student jobs</div>
+        <div class="entry-sub">Lyon, France</div>
+      </div>
+      <div class="entry-date">Since 2019</div>
+      <div class="entry-body">
+        <ul>
+          <li>McDonald's crew member, garbage collector, etc. </li>
+          <li>Meal delivery with Deliveroo</li>
+          <li>Factory worker, sales associate, etc.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
