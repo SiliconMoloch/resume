@@ -320,9 +320,9 @@
 
     <div>
       <div class="name">Yazid Bokhari</div>
-      <div class="title">Développeur informatique</div>
+      <div class="title">Développeur logiciel - Systèmes et logiciel embarqué</div>
       <p class="headline">
-	  Étudiant à 42 Lyon, à la recherche d'un <strong>stage de six mois</strong>.
+	  Étudiant en informatique à 42 Lyon, spécialisé dans le développement logiciel en C et C++ et les systèmes informatiques. À la recherche d'un <strong>stage de six mois dès à présent</strong>.
       </p>
     </div>
 
@@ -343,8 +343,8 @@
     <div class="skills-grid">
 
       <div class="skill-tag">
-        <strong>Développement C / C++</strong><br>
-        Gestion mémoire et structures de données; POO et STL en C++.
+        <strong>Langages de programmation (C, C++, Rust, Java)</strong><br>
+        Gestion de la mémoire ; algorithmique ; structures de données ; POO et STL en C++.
       </div>
 
       <div class="skill-tag">
@@ -354,17 +354,17 @@
 
       <div class="skill-tag">
         <strong>Programmation réseau</strong><br>
-        Protocoles TCP et HTTP; sockets et multiplexage avec select() et epoll().
+        Protocoles TCP, UDP, HTTP, communications spatiales (DTN, Bundle Protocol) ; sockets et multiplexage avec select() et epoll().
       </div>
 
       <div class="skill-tag">
         <strong>Programmation concurrente</strong><br>
-        Multithreading (pthread.h) et multiprocessing (semaphore.h).
+        Multithreading (pthread.h) et synchronisation par sémaphores (semaphore.h) ; prévention de data races.
       </div>
 
       <div class="skill-tag">
         <strong>Robotique industrielle</strong><br>
-		PLC (ST/LD avec Codesys 4), RAPID/PDL2, Ethernet industriel (Profinet)
+		PLC (ST/LD avec CODESYS 4), RAPID/PDL2, Ethernet industriel (PROFINET).
       </div>
 
       <div class="skill-tag">
@@ -373,20 +373,18 @@
       </div>
 
       <div class="skill-tag">
-        <strong>Débogage et tests</strong><br>
-        Tests unitaires (Github Actions ou écriture de routine de tests) et diagnostic avec GDB, Valgrind, ASan et Helgrind.
+        <strong>Environnement de développement</strong><br>
+        Git, Makefile / CMake, Cargo pour Rust, tests automatisés, intégration continue et diagnostic avec GDB, Valgrind, ASan et Helgrind.
       </div>
 
       <div class="skill-tag">
         <strong>Conteneurisation</strong><br>
-		Création d'images Docker, orchestration de services avec docker-compose, réseaux dédiés et gestion des volumes de stockage
+		Création d'images Docker, orchestration de services avec Docker Compose, réseaux dédiés et gestion des volumes de stockage.
       </div>
-
-
 
       <div class="skill-tag">
         <strong>Outils d’IA générative</strong><br>
-        Codex pour assister le développement; Ollama pour utiliser des modèles locaux.
+		Ollama, exécution et expérimentation de modèles de langage en local.
       </div>
 
     </div>
@@ -409,7 +407,7 @@
           <div class="project-head">
             <div class="project-name"><strong>minishell</strong></div>
             <div class="project-desc">
-              Shell en C avec analyse des commandes, pipes, redirections et commandes intégrées.
+              Shell en C avec parsing des commandes, redirections/pipes et commandes built-in.
             </div>
           </div>
         </div>
@@ -418,7 +416,7 @@
           <div class="project-head">
             <div class="project-name"><strong>Philosophers</strong></div>
             <div class="project-desc">
-              Threads et synchronisation; gestion des accès concurrents et prévention des interblocages.
+			  Implémentation du dilemme des philosophes en multithreading et multiprocessing avec gestion des data races et prévention des interblocages.
             </div>
           </div>
         </div>
@@ -453,6 +451,22 @@
         </div>
       </div>
 
+
+        <div class="project-card">
+          <div class="project-head">
+            <div class="project-name">
+              <strong>
+                <a href="https://github.com/SiliconMoloch/udpserv"
+                   target="_blank"
+                   rel="noopener noreferrer">udpserv</a>
+              </strong>
+            </div>
+            <div class="project-desc">
+					Serveur UDP en Java.
+            </div>
+          </div>
+        </div>
+
       <!-- INFOGRAPHIE -->
       <div class="project-group">
         <div class="project-category">Infographie</div>
@@ -461,7 +475,7 @@
           <div class="project-head">
             <div class="project-name"><strong><a href="https://github.com/SiliconMoloch/fdf" target="_blank" rel="noopener noreferrer">fdf</a></strong></div>
             <div class="project-desc">
-              Rendu 3D filaire de cartes d’altitude avec algorithme de Bresenham et transformations géométriques.
+              Rendu 3D en fil de fer à partir de cartes d’altitude avec algorithme de Bresenham et transformations géométriques ; API graphique (MinilibX, OpenGL) ; multithreading.
             </div>
           </div>
         </div>
@@ -470,7 +484,7 @@
           <div class="project-head">
             <div class="project-name"><strong>miniRT</strong></div>
             <div class="project-desc">
-              Ray tracer en C affichant objets géométriques, et ombres.
+              Ray tracer en C affichant sphères, plans, cylindres ; ombrage de Phong ; API graphique (MinilibX) ; multithreading.
             </div>
           </div>
         </div>
