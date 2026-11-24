@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume — Yazid Bokhari</title>
+  <title>CV — Yazid Bokhari</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 
@@ -198,7 +198,7 @@
       color: #3a3a35;
       padding: .25rem 0;
       border-bottom: 1px solid var(--rule);
-    }
+*    }
 
     .skill-tag strong {
       color: var(--ink);
@@ -320,10 +320,9 @@
 
     <div>
       <div class="name">Yazid Bokhari</div>
-      <div class="title">C / C++ Systems Developer</div>
+      <div class="title">Développeur informatique</div>
       <p class="headline">
-        Computer Science student at 42 Lyon seeking a
-        <strong>6-month internship or fixed-term position</strong> in systems programming.
+	  Étudiant à 42 Lyon, à la recherche d'un <strong>stage de six mois</strong>.
       </p>
     </div>
 
@@ -337,61 +336,80 @@
   </header>
 
 
-  <!-- TECHNICAL SKILLS -->
+  <!-- COMPÉTENCES TECHNIQUES -->
   <section>
-    <div class="section-label">Technical Skills</div>
+    <div class="section-label">Compétences techniques</div>
 
     <div class="skills-grid">
 
       <div class="skill-tag">
-        <strong>C & Unix</strong><br>
-        Pointers · memory · data structures · syscalls · processes · pipes · signals
+        <strong>Développement C / C++</strong><br>
+        Gestion mémoire et structures de données; POO et STL en C++.
       </div>
 
       <div class="skill-tag">
-        <strong>C++</strong><br>
-        OOP · inheritance · STL · templates · exceptions
+        <strong>Systèmes Unix</strong><br>
+        Appels système, processus, pipes et redirections.
       </div>
 
       <div class="skill-tag">
-        <strong>Concurrent programming</strong><br>
-        Threads · processes · synchronization
+        <strong>Programmation réseau</strong><br>
+        Protocoles TCP et HTTP; sockets et multiplexage avec select() et epoll().
       </div>
 
       <div class="skill-tag">
-        <strong>Tools</strong><br>
-        Git · Make · Shell · Vim
+        <strong>Programmation concurrente</strong><br>
+        Multithreading (pthread.h) et multiprocessing (semaphore.h).
       </div>
 
       <div class="skill-tag">
-        <strong>Code quality & good practices</strong><br>
-        Clean code, unit tests, debugging (GDB, Valgrind, ASan, Helgrind), communication & documentation
+        <strong>Robotique industrielle</strong><br>
+		PLC (ST/LD avec Codesys 4), RAPID/PDL2, Ethernet industriel (Profinet)
       </div>
 
       <div class="skill-tag">
-        <strong>Languages</strong><br>
-        French (native) · English (fluent)
+        <strong>Administration système</strong><br>
+        VM Debian, comptes et permissions, SSH, AppArmor et scripts Bash de surveillance.
+      </div>
+
+      <div class="skill-tag">
+        <strong>Débogage et tests</strong><br>
+        Tests unitaires (Github Actions ou écriture de routine de tests) et diagnostic avec GDB, Valgrind, ASan et Helgrind.
+      </div>
+
+      <div class="skill-tag">
+        <strong>Conteneurisation</strong><br>
+		Création d'images Docker, orchestration de services avec docker-compose, réseaux dédiés et gestion des volumes de stockage
+      </div>
+
+
+
+      <div class="skill-tag">
+        <strong>Outils d’IA générative</strong><br>
+        Codex pour assister le développement; Ollama pour utiliser des modèles locaux.
       </div>
 
     </div>
   </section>
 
 
-  <!-- TECHNICAL PROJECTS -->
+  <!-- PROJETS TECHNIQUES -->
   <section>
-    <div class="section-label">Technical Projects</div>
+    <div class="section-label">Projets clefs</div>
 
     <div class="projects-grid">
 
+
+
       <!-- UNIX -->
       <div class="project-group">
-        <div class="project-category">Unix</div>
+        <div class="project-category">Systèmes Unix</div>
 
         <div class="project-card">
           <div class="project-head">
             <div class="project-name"><strong>minishell</strong></div>
             <div class="project-desc">
-              Unix shell built from scratch, implementing command parsing and execution, pipes, redirections and built-in commands.
+              Shell en C avec analyse des commandes, pipes, redirections et commandes intégrées.
             </div>
           </div>
         </div>
@@ -400,16 +418,15 @@
           <div class="project-head">
             <div class="project-name"><strong>Philosophers</strong></div>
             <div class="project-desc">
-              Dining philosophers implementation using threads and synchronization primitives, with a focus on managing concurrent access and preventing deadlocks.
+              Threads et synchronisation; gestion des accès concurrents et prévention des interblocages.
             </div>
           </div>
         </div>
       </div>
 
-
-      <!-- NETWORK PROGRAMMING -->
+      <!-- PROGRAMMATION RESEAU -->
       <div class="project-group">
-        <div class="project-category">Network Programming</div>
+        <div class="project-category">Programmation réseau</div>
 
         <div class="project-card">
           <div class="project-head">
@@ -420,9 +437,8 @@
                    rel="noopener noreferrer">seddari</a>
               </strong>
             </div>
-
             <div class="project-desc">
-              TCP chat server built with Unix sockets and select() for I/O multiplexing, managing multiple clients and broadcasting messages.
+              Serveur de chat TCP multi-clients avec sockets Unix et multiplexage par select().
             </div>
           </div>
         </div>
@@ -431,29 +447,22 @@
           <div class="project-head">
             <div class="project-name"><strong>webserv</strong></div>
             <div class="project-desc">
-                HTTP/1.1 server developed in C++, handling requests, responses and errors, with CGI and file upload support.
+              Serveur HTTP/1.1 en C++ avec epoll(), CGI et transfert de fichiers.
             </div>
           </div>
         </div>
       </div>
 
-
-      <!-- COMPUTER GRAPHICS -->
+      <!-- INFOGRAPHIE -->
       <div class="project-group">
-        <div class="project-category">Computer Graphics</div>
+        <div class="project-category">Infographie</div>
 
         <div class="project-card">
           <div class="project-head">
-            <div class="project-name">
-              <strong>
-                <a href="https://github.com/SiliconMoloch/fdf"
-                   target="_blank"
-                   rel="noopener noreferrer">fdf</a>
-              </strong>
-            </div>
-
+            <div class="project-name"><strong><a href="https://github.com/SiliconMoloch/fdf" target="_blank" rel="noopener noreferrer">fdf</a></strong></div>
             <div class="project-desc">
-              Wireframe renderer using isometric projection, 3D transformations and Bresenham's line algorithm.            </div>
+              Rendu 3D filaire de cartes d’altitude avec algorithme de Bresenham et transformations géométriques.
+            </div>
           </div>
         </div>
 
@@ -461,21 +470,44 @@
           <div class="project-head">
             <div class="project-name"><strong>miniRT</strong></div>
             <div class="project-desc">
-              Ray-tracing engine featuring Phong shading, shadows and reflections, with support for spheres, planes and cylinders.            </div>
+              Ray tracer en C affichant objets géométriques, et ombres.
+            </div>
           </div>
         </div>
       </div>
 
-
-      <!-- REVERSE ENGINEERING -->
+      <!-- SYSTEMES ET CONTENEURISATION -->
       <div class="project-group">
-        <div class="project-category">Reverse Engineering</div>
+        <div class="project-category">Administration système</div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <div class="project-name"><strong>Born2beroot</strong></div>
+            <div class="project-desc">
+              Administration d’une VM Debian : utilisateurs, droits, SSH, AppArmor et scripts Bash de surveillance système.
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-head">
+            <div class="project-name"><strong>Inception</strong></div>
+            <div class="project-desc">
+              Infrastructure Docker Compose : Nginx, WordPress, MariaDB et Redis, réseau dédié et volumes persistants.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RETRO-INGENIERIE -->
+      <div class="project-group">
+        <div class="project-category">Rétro-ingénierie</div>
 
         <div class="project-card">
           <div class="project-head">
             <div class="project-name"><strong>Retro-MFA</strong></div>
             <div class="project-desc">
-              Reverse-engineering project involving encrypted file analysis and extraction of embedded images.
+              Analyse de fichiers chiffrés et extraction d’images intégrées.
             </div>
           </div>
         </div>
@@ -485,21 +517,21 @@
   </section>
 
 
-  <!-- EDUCATION -->
+  <!-- FORMATION -->
   <section>
-    <div class="section-label">Education</div>
+    <div class="section-label">Formation</div>
 
     <div class="entry">
       <div>
-        <div class="entry-title"><a href="https://www.francecompetences.fr/recherche/rncp/39774/" target="_blank" rel="noopener noreferrer">RNCP39774 — IT Architecture Expert</a></div>
+        <div class="entry-title"><a href="https://www.francecompetences.fr/recherche/rncp/39774/" target="_blank" rel="noopener noreferrer">RNCP39774 — Expert en architecture informatique</a></div>
         <div class="entry-sub">42 Lyon Auvergne-Rhône-Alpes</div>
       </div>
-      <div class="entry-date">Nov 2024 — Present</div>
+      <div class="entry-date">Nov. 2024 — Présent</div>
     </div>
 
     <div class="entry">
       <div>
-        <div class="entry-title">Bachelor of Laws</div>
+        <div class="entry-title">Licence de droit</div>
         <div class="entry-sub">Université catholique de Lyon</div>
       </div>
       <div class="entry-date">2023</div>
@@ -507,41 +539,41 @@
   </section>
 
 
-  <!-- EXPERIENCE -->
+  <!-- EXPÉRIENCE PROFESSIONNELLE -->
   <section>
-    <div class="section-label">Work Experience</div>
+    <div class="section-label">Expérience professionnelle</div>
 
 
     <div class="entry">
       <div>
-        <div class="entry-title">GDPR Compliance Intern</div>
+        <div class="entry-title">Stagiaire en conformité RGPD</div>
         <div class="entry-sub">Opteven</div>
       </div>
-      <div class="entry-date">Jan 2021</div>
+      <div class="entry-date">Janv. 2021</div>
 
       <div class="entry-body">
-        <p>GDPR awareness and internal communication.</p>
+        <p>Sensibilisation au RGPD et communication interne.</p>
       </div>
     </div>
 
   </section>
 
 
-  <!-- ASSOCIATIVE EXPERIENCE -->
+  <!-- EXPÉRIENCE ASSOCIATIVE -->
   <section>
-    <div class="section-label">Associative Experience</div>
+    <div class="section-label">Expérience associative</div>
 
     <div class="entry">
       <div>
-        <div class="entry-title">Tutor & Ambassador at 42</div>
-        <div class="entry-sub">School Association</div>
+        <div class="entry-title">Tuteur & ambassadeur à 42</div>
+        <div class="entry-sub">Association de l'école</div>
       </div>
-      <div class="entry-date">Jan 2025 — Present</div>
+      <div class="entry-date">Janv. 2025 — Présent</div>
 
       <div class="entry-body">
         <p>
-          Coding workshops, student mentoring, Piscine exam supervision,
-          C project evaluation and school representation.
+          Ateliers de programmation, accompagnement des étudiants, surveillance des examens de Piscine,
+          évaluation de projets en C et représentation de l'école.
         </p>
       </div>
     </div>
